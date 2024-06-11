@@ -24,6 +24,20 @@ def main():
     print("")  # line break
     ### write code to complete this function BELOW here ###
 
+    value_1 = app_functions.roll_die()
+    value_2 = app_functions.roll_die()
+    question_type = app_functions.get_question_type()
+    app_functions.print_question(value_1, value_2, question_type)
+
+    answer = app_functions.input_answer()
+    if answer == -1: 
+        return
+    if app_functions.is_correct_answer(value_1, value_2, question_type, answer) == True:
+        app_functions.print_congratulations(question_type)
+    elif app_functions.is_correct_answer(value_1, value_2, question_type, answer) == False:
+        app_functions.print_correct_answer(value_1, value_2, question_type)
+
+
     ### write code to complete this function ABOVE here ###
     print("")  # line break
     print("Game over!!!")
